@@ -1894,32 +1894,53 @@ Energy efficiency
 -----------------
 
 The energy efficiency should be an overall requirement for both the cloud infrastructure itself and the workloads
-hosted by this infrastructure. It is defined as "the relation between the useful output and energy consumption" by
-`ITU-T L.1330 <https://www.itu.int/rec/T-REC-L.1330>`__ :cite:p:`itutl1330` for telecommunication networks and
-`ETSI EN 303 471 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ :cite:p:`etsien303sp471` for NFV,
-the useful output being a metric which represents the capacity provided by the service whose energy efficiency is
-assessed.
+hosted by this infrastructure.
 
-As an example, the useful output of a traffic forwarding function can be the data volume forwarded (e.g., measured
-in Byte) and the assessment of its energy efficiency is then based on the ratio between this volume and the energy
-consumed for processing it (e.g., measured in Watt.hour) :
-Energy Efficicency (B/Wh) = Traffic Volume / Consumed Energy
+Definition
+~~~~~~~~~~
+The energy efficiency is defined as **"the relation between the useful output and energy consumption"** by `ITU-T L.1330 
+<https://www.itu.int/rec/T-REC-L.1330>`__ :cite:p:`itutl1330` for telecommunication networks and by `ETSI EN 303 471 
+<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ :cite:p:`etsien303sp471` for NFV, 
+the useful output being a metric which represents the capacity provided by the service whose energy efficiency is assessed.
 
-The method for assessing energy efficiency depends on the service targeted and the objectives. For NFV, ETSI proposes
-a method for production environment in `ETSI EN 303 471
-<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ :cite:p:`etsien303sp471` and another one for laboratory one
-in `ETSI ES 203 539 <https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ :cite:p:`etsies203sp539` (which is
-a common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ :cite:p:`itutl1361`).
+As an example, the useful output of a traffic forwarding service can be the data volume forwarded during a period of time 
+(e.g., measured in Byte) and the assessment of its energy efficiency is then based on the ratio between this volume and the 
+energy consumed for processing it during the same period of time (e.g., measured in Watt.hour) :
+Energy Efficicency (B/Wh) = Data Volume / Consumed Energy
 
-Whatever the method and the service, it requires the cloud infrastructure to provide some **energy consumption metrics**
-for different parts of the infrastructure hardware (server, CPU etc.) as included in
-:ref:`chapters/chapter04:internal performance measurement capabilities`.
-These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation
+Utilisation
+~~~~~~~~~~~
+The energy efficiency should be considered for selecting infrastructure and workload implementations (i.e., components and
+configurations) by applying the following basic principles:
+
+- **Workload selection** : for a given service on a given infrastructure, a workload implementation providing this service 
+  will be preferred to a concurrent one providing the same service, if it consumes less energy for the same useful service 
+  output amount during the same period of time.
+
+- **Infrastructure selection** : for a given service, an infrastructure implementation will be preferred to another one, if
+  two concurrent workload implementations providing this same service consume less energy over this infrastructure than over
+  the other one for the same useful service output amount during the same period of time.
+
+Assessment
+~~~~~~~~~~
+The method for assessing the energy efficiency depends on the service targeted and the context. For NFV, ETSI proposes a 
+method for production environment in `ETSI EN 303 471 
+<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=50095>`__ :cite:p:`etsien303sp471` and another one 
+for laboratory one in `ETSI ES 203 539 
+<https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=47210>`__ :cite:p:`etsies203sp539` (which is a 
+common work with ITU-T which published as `ITU-T L.1361 <https://www.itu.int/rec/T-REC-L.1361>`__ :cite:p:`itutl1361`).
+
+Whatever the method, it requires the infrastructure to provide some **energy consumption metrics** for different parts of 
+the hardware (server, CPU etc.) as included in :ref:`chapters/chapter04:internal performance measurement capabilities`.
+These metrics can be an amount of consumed energy (measured in Joule or Watt.hour) or a real-time power utilisation 
 (measured in Watt or Joule/second) as proposed by `DMTF Redfish DSP0268 2022.2
-<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish` which specifies metrics
-EnergykWh and PowerWatts for this purpose.
+<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish` which specifies 
+metrics PowerWatts and EnergykWh for this purpose.
 
+Other references
+~~~~~~~~~~~~~~~~
 Some relevant information regarding NFV energy efficiency can also be found in `Open RAN Technical Priority - Focus
 on Energy Efficiency (March 2022) <https://www.o-ran.org/ecosystem-resources>`__ :cite:p:`oranenergyeff` and `QuEST Forum - NFV
 Workload Efficiency Whitepaper (October 2016)
 <https://tl9000.org/resources/documents/NFV%20Workload%20Efficiency%20Whitepaper.pdf>`__ :cite:p:`questnfvwlenergyeff`.
+
