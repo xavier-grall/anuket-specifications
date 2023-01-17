@@ -347,31 +347,31 @@ or events should be collected and monitored by monitoring tools.
 |         | Throughput          | second    | as defined in ETSI GS NFV-TST 008 V3.5.1 :cite:p:`etsigsnfvtst008`       |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.023 | Host power          | Watt      | Real-time electrical power used by a node (1)                            |
-|         | utilization         | (Joule/s) |                                                                          |
+|         | utilisation         | (Joule/s) |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.024 | Host energy         | Watt.hour | Electrical energy consumption of a node since the related counter last   |
 |         | consumption         | (Joule)   | reset (2)                                                                |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.025 | CPU power           | Watt      | Real-time electrical power used by the processor(s) of a node (1)        |
-|         | utilization         | (Joule/s) |                                                                          |
+|         | utilisation         | (Joule/s) |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.026 | CPU energy          | Watt.hour | Electrical energy consumption of the processor(s) of a node since the    |
 |         | consumption         | (Joule)   | related counter last reset (2)                                           |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.027 | PCIe device power   | Watt      | Real-time electrical power used by a specific PCI device of a node (1)   |
-|         | utilization         | (Joule/s) |                                                                          |
+|         | utilisation         | (Joule/s) |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.028 | PCIe device energy  | Watt.hour | Electrical energy consumption of a specific PCI device of a node since   |
 |         | consumption         | (Joule)   | the related counter last reset (2)                                       |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.029 | RAM power           | Watt      | Real-time electrical power used by the memory of a node (1)              |
-|         | utilization         | (Joule/s) |                                                                          |
+|         | utilisation         | (Joule/s) |                                                                          |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.030 | RAM energy          | Watt.hour | Electrical energy consumption of the memory of a node since the related  |
 |         | consumption         | (Joule)   | counter last reset (2)                                                   |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.031 | Disk power          | Watt      | Real-time electrical power used by a specific storage device of a node   |
-|         | utilization         | (Joule/s) | (1)                                                                      |
+|         | utilisation         | (Joule/s) | (1)                                                                      |
 +---------+---------------------+-----------+--------------------------------------------------------------------------+
 |i.pm.032 | Disk energy         | Watt.hour | Electrical energy consumption of a specific storage device of a node     |
 |         | consumption         | (Joule)   | since the related counter last reset (2)                                 |
@@ -379,11 +379,15 @@ or events should be collected and monitored by monitoring tools.
 
 **Table 4-8:** Internal Measurement Capabilities of Cloud Infrastructure
 
-(1) for example, relying on PowerWatts metrics as defined by DMTF Redfish specification DSP0268 2022.2, provided by a sensor metering "the arithmetic mean of
-product terms of instantaneous voltage and current values measured over integer number of line cycles for a circuit, in watt units"
+(1) for example, relying on metrics PowerWatts as defined by `DMTF Redfish DSP0268 2022.2
+<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish`, provided by a
+sensor metering "the arithmetic mean of product terms of instantaneous voltage and current values measured over integer
+number of line cycles for a circuit, in watt units"
 
-(2) for example, relying on EnergykWh metrics as defined by DMTF Redfish specification DSP0268 2022.2, provided by a sensor metering "the energy, integral of
-real power over time" reflecting "the power consumption since the sensor metrics were last reset"
+(2) for example, relying on metrics EnergykWh as defined by `DMTF Redfish DSP0268 2022.2
+<https://www.dmtf.org/sites/default/files/standards/documents/DSP0268_2022.2.pdf>`__ :cite:p:`dmtfredfish`, provided by a
+sensor metering "the energy, integral of real power over time" reflecting "the power consumption since the sensor metrics
+were last reset"
 
 Cloud Infrastructure Management Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
